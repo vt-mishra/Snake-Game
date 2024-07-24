@@ -1,0 +1,110 @@
+
+   body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden; /* Hide overflow to avoid scroll bars */
+    position: relative; /* To position bubbles absolutely */
+    background-color: #353b69;
+    background-image: linear-gradient(to right, #d77272 1px, transparent 1px), linear-gradient(to bottom, #2aa430 1px, transparent 1px);
+    background-size: 25% 14%;
+  }
+  
+  .scoreboard {
+    margin-bottom: 20px;
+    color: white;
+  }
+  
+  .game-area {
+    position: relative;
+    width: 90vmin;
+    height: 90vmin;
+    max-width: 400px;
+    max-height: 400px;
+    background-color: rgba(0, 255, 0, 0.1); /* Light green background */
+    border: 1px solid #000; /* Border around game area */
+  }
+  
+  .grid {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(20, 1fr);
+    background-color: #353b69;
+    background-image: linear-gradient(to right, #d77272 1px, transparent 1px), linear-gradient(to bottom, #2aa430 1px, transparent 1px);
+    background-size: 5% 5%;
+  }
+  
+  .snake-segment {
+    position: absolute;
+    width: 5%;
+    height: 5%;
+    background-color: #0f0; /* Snake color */
+  }
+  
+  .food {
+    position: absolute;
+    width: 5%;
+    height: 5%;
+    background-color: #0bff00;
+  }
+  
+  .game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    font-size: 2rem;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .game-over p {
+    font-size: 3rem;
+    font-family: 'Courier New', Courier, monospace;
+  
+  }
+  
+  .game-over button {
+    margin-top: 0px;
+    padding: 3px 16px;
+    font-size: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    cursor: pointer;
+  } 
+
+  @media (max-width: 600px) {
+    .game-area {
+      width: 90vw;
+      height: 90vh;
+    }
+  }
+  
+  @media (min-width: 601px) and (max-width: 1200px) {
+    .game-area {
+      width: 85vw;
+      height: 85vh;
+    }
+  }
+  /* Style for the developer name */
+.developer-name {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #fff;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    background: #c5cae994;
+    transform: translate(0%, -50%);
+}
