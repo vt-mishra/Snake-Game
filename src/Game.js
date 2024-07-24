@@ -109,7 +109,7 @@ const Game = () => {
   useEffect(() => {
     document.addEventListener('keydown', changeDirection);
     return () => document.removeEventListener('keydown', changeDirection);
-  }, [direction]);
+  }, [direction,changeDirection]);
 
   const restartGame = () => {
     setSnake([[2, 2], [2, 3]]);
