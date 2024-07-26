@@ -59,7 +59,7 @@ const Game = () => {
         newSnake.unshift([]);
         setFood(getRandomPosition());
         setSpeed(prevSpeed => Math.max(prevSpeed - 10, 50));
-        setScore(prevScore => prevScore + 1);
+        setScore(prevScore => prevScore + 10);
       }
 
       // Check for collision with walls
@@ -109,7 +109,26 @@ const Game = () => {
   useEffect(() => {
     document.addEventListener('keydown', changeDirection);
     return () => document.removeEventListener('keydown', changeDirection);
-  }, [direction,changeDirection]);
+  }, [direction]);
+
+  const handleButtonPress = (newDirection) => {
+    switch (newDirection) {
+      case 'UP':
+        if (direction !== 'DOWN') setDirection('UP');
+        break;
+      case 'DOWN':
+        if (direction !== 'UP') setDirection('DOWN');
+        break;
+      case 'LEFT':
+        if (direction !== 'RIGHT') setDirection('LEFT');
+        break;
+      case 'RIGHT':
+        if (direction !== 'LEFT') setDirection('RIGHT');
+        break;
+      default:
+        break;
+    }
+  };
 
   const restartGame = () => {
     setSnake([[2, 2], [2, 3]]);
@@ -175,6 +194,16 @@ const Game = () => {
             }}
           ></div>
         </div>
+        {!gameOver && (
+          <div className="controls">
+            <button className="arrow-btn up" onClick={() => handleButtonPress('UP')}>&#9650;</button>
+            <div className="horizontal-btns">
+              <button className="arrow-btn left" onClick={() => handleButtonPress('LEFT')}>&#9664;</button>
+              <button className="arrow-btn right" onClick={() => handleButtonPress('RIGHT')}>&#9654;</button>
+            </div>
+            <button className="arrow-btn down" onClick={() => handleButtonPress('DOWN')}>&#9660;</button>
+          </div>
+        )}
       </div>
     </div>
   );

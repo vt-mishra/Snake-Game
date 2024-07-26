@@ -9,14 +9,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    padding: 3em;
     min-height: 100vh;
-    overflow: hidden; /* Hide overflow to avoid scroll bars */
-    position: relative; /* To position bubbles absolutely */
+    overflow: hidden;
+    position: relative;
     background-color: #353b69;
     background-image: linear-gradient(to right, #d77272 1px, transparent 1px), linear-gradient(to bottom, #2aa430 1px, transparent 1px);
     background-size: 25% 14%;
-  }
+}
   
   .scoreboard {
     margin-bottom: 20px;
@@ -107,4 +107,114 @@
     font-family: 'Courier New', Courier, monospace;
     background: #c5cae994;
     transform: translate(0%, -50%);
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.horizontal-btns {
+  display: flex;
+}
+
+.arrow-btn {
+  width: 50px;
+  height: 50px;
+  transform: translate(-10%, -40%);
+    color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin: 5px;
+  background-color: #353b69;
+    background-image: linear-gradient(to right, #d77272 1px, transparent 1px), linear-gradient(to bottom, #2aa430 1px, transparent 1px);
+    background-size: 50% 50%;
+  border: 2px solid #07b6f0;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(55, 210, 70, 0.3);
+  transition: background-color 0.3s, color 0.3s; 
+}
+.arrow-btn:hover {
+  background-color: #e0baf4;
+  background-image: linear-gradient(to right, #d77272 1px, transparent 1px), linear-gradient(to bottom, #2aa430 1px, transparent 1px);
+  background-size: 50% 50%;    /* Change text color on hover */
+}
+
+.arrow-btn.up {
+  margin: 2em 0 1em 0;
+  
+}
+
+.arrow-btn.down {
+  margin-top: 10px;
+}
+
+.arrow-btn.left, .arrow-btn.right {
+  margin: 0 40px;
+}
+/* Color specific to different buttons */
+.arrow-btn.up {
+  color: #ff0000; /* Red color for up arrow */
+}
+
+.arrow-btn.left {
+  color: #ff00dd; /* Green color for left arrow */
+}
+
+.arrow-btn.right {
+  color: #0000ff; /* Blue color for right arrow */
+}
+
+.arrow-btn.down {
+  color: #ffff00; /* Yellow color for down arrow */
+}
+@media (max-width: 600px) {
+  .arrow-btn {
+    width: 4em;
+    height: 4em;
+    font-size: 20px;
+  }
+
+  .game-area {
+    width: 90vw;
+    height: 100vh;
+  }
+}
+
+@media (max-width: 400px) {
+  .arrow-btn {
+    width: 4em;
+    height: 4em;
+    font-size: 18px;
+  }
+
+  .game-area {
+    width: 90vw;
+    height: 100vh;
+  }
+}
+
+@media (max-width: 380px) {
+  .arrow-btn {
+    width: 3em;
+    height: 3em;
+    font-size: 15px;
+  }
+  .game-container {
+    min-height: 86vh;
+  }
+  .game-area {
+    width: 80vw;
+    height: 40vh;
+  }
+}
+@media (min-width: 601px) and (max-width: 1200px) {
+  .arrow-btn {
+    display: none;
+  }
 }
