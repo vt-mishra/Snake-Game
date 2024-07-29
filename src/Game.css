@@ -9,8 +9,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 3em;
-    min-height: 100vh;
+    padding: 0em;
+    min-height: 100vh !important;
     overflow: hidden;
     position: relative;
     background-color: #353b69;
@@ -112,7 +112,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .horizontal-btns {
@@ -145,7 +145,7 @@
 }
 
 .arrow-btn.up {
-  margin: 2em 0 1em 0;
+  margin: 2em 0 0em 0;
   
 }
 
@@ -205,7 +205,7 @@
     font-size: 15px;
   }
   .game-container {
-    min-height: 86vh;
+    min-height: 87vh;
   }
   .game-area {
     width: 80vw;
